@@ -20,6 +20,12 @@ namespace WebApplication3.Controllers
             return View();
         }
 
+        public ActionResult Welcome()
+        {
+            int a =10;
+            ViewBag.a = a;
+            return View();
+        }
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
