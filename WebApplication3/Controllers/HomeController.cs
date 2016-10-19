@@ -19,7 +19,22 @@ namespace WebApplication3.Controllers
 
             return View();
         }
-
+        /// <summary>
+        /// 列表界面
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult List()
+        {
+            string[] data = new string[] { "知乎", "豆瓣", "天涯论坛","新浪微博"};
+            //ViewBag.Data = data;
+            //ViewData["Data"] = data;
+            ViewData.Model = data;
+            return View(data);
+        }
+        /// <summary>
+        /// welcome界面
+        /// </summary>
+        /// <returns></returns>
         public ActionResult Welcome()
         {
             int a =10;

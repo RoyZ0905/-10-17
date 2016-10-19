@@ -1,0 +1,15 @@
+﻿@Model
+@{
+    ViewBag.Title = "List";
+    //var NewList = ViewBag.Data as string[];
+    //var NewList = ViewData["Data"] as string[];
+
+}
+
+<h2>List</h2>
+<ol>
+    @foreach (var it in Model)
+    {
+        <li>@it</li>
+    }
+</ol>
