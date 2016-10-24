@@ -1,12 +1,24 @@
 ﻿@model string[]
 @{
     ViewBag.Title = "List";
-    //var NewList = ViewBag.Data as string[];
-    //var NewList = ViewData["Data"] as string[];
+    var NewList1 = ViewBag.Data as string[];
+    var NewList2 = ViewData["Data"] as string[];
 
 }
 
 <h2>List</h2>
+<ol>
+    @foreach (var it in NewList1)
+    {
+        <li>@it</li>
+    }
+</ol>
+<ol>
+    @foreach (var it in NewList2)
+    {
+        <li>@it</li>
+    }
+</ol>
 <ol>
     @foreach (var it in Model)
     {

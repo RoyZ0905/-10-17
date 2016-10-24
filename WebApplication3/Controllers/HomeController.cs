@@ -25,9 +25,9 @@ namespace WebApplication3.Controllers
         /// <returns></returns>
         public ActionResult List()
         {
-            string[] data = new string[] { "知乎", "豆瓣", "天涯论坛","新浪微博"};
-            //ViewBag.Data = data;
-            //ViewData["Data"] = data;
+            string[] data = new string[] { "知乎", "豆瓣", "天涯论坛", "新浪微博" };
+            ViewBag.Data = data;
+            ViewData["Data"] = data;
             ViewData.Model = data;
             return View(data);
         }
@@ -37,7 +37,7 @@ namespace WebApplication3.Controllers
         /// <returns></returns>
         public ActionResult Welcome()
         {
-            int a =10;
+            int a = 10;
             ViewBag.a = a;
             return View();
         }
@@ -45,6 +45,23 @@ namespace WebApplication3.Controllers
         {
             ViewBag.Message = "Your contact page.";
 
+            return View();
+        }
+
+        /// <summary>
+        /// 添加新闻
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult AddNews()
+        {
+
+            return View();
+        }
+
+        public ActionResult Save(string title,string content)
+        {
+            ViewBag.Ti = title;
+            ViewBag.Content = content;
             return View();
         }
     }
