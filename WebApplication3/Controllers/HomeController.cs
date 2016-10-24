@@ -23,12 +23,13 @@ namespace WebApplication3.Controllers
         /// 列表界面
         /// </summary>
         /// <returns></returns>
-        public ActionResult List()
+        public ActionResult List(int page=10)
         {
             string[] data = new string[] { "知乎", "豆瓣", "天涯论坛", "新浪微博" };
             ViewBag.Data = data;
             ViewData["Data"] = data;
             ViewData.Model = data;
+            ViewBag.Page = page;
             return View(data);
         }
         /// <summary>

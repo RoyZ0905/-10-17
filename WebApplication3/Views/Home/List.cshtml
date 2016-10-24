@@ -3,10 +3,13 @@
     ViewBag.Title = "List";
     var NewList1 = ViewBag.Data as string[];
     var NewList2 = ViewData["Data"] as string[];
+    var curpage = (int)ViewBag.Page;
+    var start = curpage - 3;
 
 }
 
 <h2>List</h2>
+<h3>第 @ViewBag.Page 页</h3>
 <ol>
     @foreach (var it in NewList1)
     {
@@ -23,5 +26,13 @@
     @foreach (var it in Model)
     {
         <li>@it</li>
+    }
+</ol>
+<ol>
+    @for(int i=start;i<curpage+3;i++)
+    {
+        <li>
+            @Html.ActionLink(string.Format("第{0}页",i),"List","Home",new { page=i},null)
+        </li>
     }
 </ol>
