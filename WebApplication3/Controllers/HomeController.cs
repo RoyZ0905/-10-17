@@ -58,6 +58,7 @@ namespace WebApplication3.Controllers
 
             return View();
         }
+       
 
         public ActionResult Save(string title,string content)
         {
@@ -65,5 +66,6 @@ namespace WebApplication3.Controllers
             ViewBag.Content = content;
             return View();
         }
+       
     }
 }

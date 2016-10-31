@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewBag.Title = "AddBlog";
+}
+
+<h2>AddBlog</h2>
+
+<form action="/Blog/BlogSave" method="post">
+    <table class="table table-bordered">
+        <tr>
+            <td>标题</td>
+            <td><input type="text" name="Title" value="" /></td>
+        </tr>
+        <tr>
+            <td>博客内容</td>
+            <td><textarea name="Body" cols="60" rows="4"></textarea></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <button type="submit" class="btn btn-success">提交</button>
+                <button type="reset" class="btn btn-danger">取消</button>
+            </td>
+        </tr>
+    </table>
+</form>

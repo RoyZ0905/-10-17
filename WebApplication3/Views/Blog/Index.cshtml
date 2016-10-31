@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    var a = ViewBag.BlogBodys as List<BlogBody>;
+
+    
+}
+
+<h2>博客</h2>
+
+<ol>
+    @foreach (var it in a)
+    {
+        <li>
+            @Html.ActionLink("[编辑]", "Change", new { id = it.Id }) |
+            @Html.ActionLink("[删除]", "Delete", new { id = it.Id }) |
+            <a href="Blog/Show/@it.Id">@it.Title</a>
+        </li>
+    }
+</ol>

@@ -1,0 +1,10 @@
+﻿@model BlogBody
+@{
+    ViewBag.Title = "Show";
+}
+
+<h2> @Model.Title</h2>
+<div>发表时间: @Model.DateCreated </div>
+<pre>
+@Model.Body
+</pre>
