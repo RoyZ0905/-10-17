@@ -7,7 +7,11 @@
 }
 
 <h2>博客</h2>
-
+<fieldset>
+    <form method="get" action="@Url.Action("Index")">
+        搜索:<input type="text" name="c" value="@ViewBag.c" /> <button type="submit" class="btn btn-success">搜索</button>
+    </form>
+</fieldset>
 <ol>
     @foreach (var it in a)
     {

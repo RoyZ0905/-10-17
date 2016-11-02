@@ -9,14 +9,22 @@ namespace WebApplication3.Controllers
     public class BlogController : Controller
     {
         // GET: Blog
-        public ActionResult Index()
+        public ActionResult Index(string c)
         {
             var db = new BlogDatabase();
 
             db.Database.CreateIfNotExists();
 
-            var lst = db.BlogBodys.OrderByDescending(o => o.Id).ToList();
-            ViewBag.BlogBodys = lst;
+            var lst = db.BlogBodys.AsQueryable();
+
+            if(!string.IsNullOrWhiteSpace(c))
+            {
+                lst = lst.Where(o => o.Title.Contains(c));
+            }
+
+            ViewBag.BlogBodys = lst.OrderByDescending(o=>o.Id).ToList();
+
+            ViewBag.c = c;
 
             return View();
         }
