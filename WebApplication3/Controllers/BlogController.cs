@@ -75,6 +75,7 @@ namespace WebApplication3.Controllers
             var db = new BlogDatabase();
             var article = db.BlogBodys.First(o => o.Id == id);
 
+
             db.BlogBodys.Remove(article);
             db.SaveChanges();
 
