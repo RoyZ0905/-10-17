@@ -1,19 +1,27 @@
-﻿
+﻿@model BlogBody
 @{
     ViewBag.Title = "AddBlog";
 }
 
 <h2>AddBlog</h2>
 
-<form action="/Blog/BlogSave" method="post">
+@using (Html.BeginForm("BlogSave", "Blog"))
+{
+    @Html.ValidationSummary()
     <table class="table table-bordered">
         <tr>
             <td>标题</td>
-            <td><input type="text" name="Title" value="" /></td>
+            <td>
+                @Html.TextBoxFor(o=>o.Title)
+                @Html.ValidationMessageFor(o => o.Title)
+            </td>
         </tr>
         <tr>
             <td>博客内容</td>
-            <td><textarea name="Body" cols="60" rows="4"></textarea></td>
+            <td>
+                @Html.TextAreaFor(o=>o.Body)
+                @Html.ValidationMessageFor(o => o.Body)
+            </td>
         </tr>
         <tr>
             <td></td>
@@ -22,5 +30,6 @@
                 <button type="reset" class="btn btn-danger">取消</button>
             </td>
         </tr>
-    </table>
-</form>
+     </table>
+}
+

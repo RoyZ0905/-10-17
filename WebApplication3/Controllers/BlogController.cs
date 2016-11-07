@@ -37,17 +37,16 @@ namespace WebApplication3.Controllers
 
             return View();
         }
-        public ActionResult BlogSave(string title, string body)
+        public ActionResult BlogSave(BlogBody model)
         {
             var article = new BlogBody();
-            article.Title = title ;
-            article.Body = body;
+            article.Title = model.Title ;
+            article.Body = model.Body;
             article.DateCreated = DateTime.Now;
 
             var db = new BlogDatabase();
             db.BlogBodys.Add(article);
             db.SaveChanges();
-
             return Redirect("Index");
         }
         public ActionResult Show(int id)
