@@ -34,8 +34,15 @@ namespace WebApplication3.Controllers
         /// <returns></returns>
         public ActionResult AddBlog()
         {
-
-            return View();
+            if (Request.Cookies["isauth"]!=null && Request.Cookies["isauth"].Value=="ture")
+            {
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Login", "Cookies");
+            }
+            
         }
         public ActionResult BlogSave(BlogBody model)
         {
